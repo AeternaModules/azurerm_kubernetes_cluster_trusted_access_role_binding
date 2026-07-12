@@ -1,3 +1,7 @@
+output "kubernetes_cluster_trusted_access_role_bindings_id" {
+  description = "Map of id values across all kubernetes_cluster_trusted_access_role_bindings, keyed the same as var.kubernetes_cluster_trusted_access_role_bindings"
+  value       = { for k, v in azurerm_kubernetes_cluster_trusted_access_role_binding.kubernetes_cluster_trusted_access_role_bindings : k => v.id }
+}
 output "kubernetes_cluster_trusted_access_role_bindings_kubernetes_cluster_id" {
   description = "Map of kubernetes_cluster_id values across all kubernetes_cluster_trusted_access_role_bindings, keyed the same as var.kubernetes_cluster_trusted_access_role_bindings"
   value       = { for k, v in azurerm_kubernetes_cluster_trusted_access_role_binding.kubernetes_cluster_trusted_access_role_bindings : k => v.kubernetes_cluster_id }
